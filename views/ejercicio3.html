@@ -119,14 +119,138 @@
 
         <div class="card">
             <div class="m-4">
-                <p>Aquí va la solución del ejercicio 3</p>
+                <p class="my-2">*Desarrolle un algoritmo que permita leer tres valores y almacenarlos en las variables
+                    A, B y C respectivamente. El algoritmo debe imprimir cual es el mayor y cual es el menor. Recuerde
+                    constatar que los tres valores introducidos por el teclado sean valores distintos. Presente un
+                    mensaje de alerta en caso de que se detecte la introducción de valores iguales.</p>
             </div>
+
+            <center>
+                <div class="card border-light mx-4" style="max-width: 40rem;">
+                    <img class="" src="../src/images/ejercicios/ejercicio3.png" alt="ejercicio 3">
+                </div>
+            </center>
+
+            <div class="m-4">
+                <h3>Comparador de valores</h3>
+
+                <div class="form-group my-2">
+                    <label class="form-label">Ingrese los datos</label>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="valorA" placeholder="Valor A"
+                            data-listener-added_5f298116="true">
+                        <label for="radio">Valor A</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="valorB" placeholder="Valor B"
+                            data-listener-added_5f298116="true">
+                        <label for="altura">Valor B</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="valorC" placeholder="Valor C"
+                            data-listener-added_5f298116="true">
+                        <label for="altura">Valor C</label>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-lg" onclick="compararValores()">Calcular</button>
+
+                <div class="resultado-container my-3">
+                    <div class="row">
+                        <p class="col-sm-2">Resultado:</p>
+                        <div class="col-sm-10">
+                            <p><span id="resultado"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mx-4">
+                <h4>Algoritmo</h4>
+                <p class="my-2">si deseas ver en consola la solución del algoritmo en un archivo javascript llamado
+                    <b>ejercicio2.js</b> ingresa el siguiente código y ejecuta el comando <b> node ejercicio2.js.</b>
+                </p>
+                <p>
+                    const readline = require('readline');
+                </p>
+                <p>
+                    const rl = readline.createInterface({
+                    <br>
+                    input: process.stdin,
+                    <br>
+                    output: process.stdout
+                    <br>
+                    });
+                </p>
+                <p>
+                    let A = 0;
+                    <br>
+                    let B = 0;
+                    <br>
+                    let C = 0;
+                    <br>
+                    <br>
+                    function solicitarValores() {
+                    <br>
+                    rl.question('Ingrese el primer valor: ', (inputA) => {
+                    <br>
+                    A = parseInt(inputA);
+                    <br>
+                    rl.question('Ingrese el segundo valor: ', (inputB) => {
+                    <br>
+                    B = parseInt(inputB);
+                    <br>
+                    rl.question('Ingrese el tercer valor: ', (inputC) => {
+                    <br>
+                    C = parseInt(inputC);
+                    <br>
+                    if (A === B || A === C || B === C) {
+                    <br>
+                    console.log('Los valores deben ser distintos. Vuelva a ingresarlos.\n');
+                    <br>
+                    solicitarValores();
+                    <br>
+                    } else {
+                    <br>
+                    if (A > B && A > C) {
+                    <br>
+                    console.log(A + ' es el mayor.');
+                    <br>
+                    }
+                    <br>
+                    if (B > A && B > C) {
+                    <br>
+                    console.log(B + ' es el mayor.');
+                    <br>
+                    } if (C > A && C > B) {
+                    <br>
+                    console.log(C + ' es el mayor.');
+                    <br>
+                    }
+                    <br>
+                    rl.close();
+                    <br>
+                    }
+                    <br>
+                    });
+                    <br>
+                    });
+                    <br>
+                    });
+                    <br>
+                    }
+                    <br>
+                    <br>
+                    solicitarValores();
+                </p>
+            </div>
+
         </div>
     </div>
 
     <script src="../main.js"></script>
-    <script src="ejercicio3.js"></script>
-    
+    <script src="../js/ejercicio3.js"></script>
+
 </body>
 
 </html>
