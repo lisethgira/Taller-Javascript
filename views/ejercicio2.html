@@ -156,12 +156,12 @@
                         </div>
                     </div>
                 </div>
-               
+
             </div>
             <div class="mx-4">
-                <h4 class="my-2">Algoritmo</h4>
+                <h4>Algoritmo</h4>
                 <p class="my-2">si deseas ver en consola la solución del algoritmo en un archivo javascript llamado
-                    <b>ejercicio1.js</b> ingresa el siguiente código y ejecuta el comando <b> node ejercicio1.js.</b>
+                    <b>ejercicio2.js</b> ingresa el siguiente código y ejecuta el comando <b> node ejercicio2.js.</b>
                 </p>
                 <p>
                     const readline = require('readline');
@@ -176,78 +176,49 @@
                     });
                 </p>
                 <p>
-                    function calcularAreaVolumen() {
+                    let A = 0;
                     <br>
-                    <b>//Obtener los valores del radio y la altura del formulario</b>
-                    <br>
-                    let radio = parseFloat(document.getElementById("radio").value);
-                    <br>
-                    let altura = parseFloat(document.getElementById("altura").value);
+                    let B = 0;
                     <br>
                     <br>
-                    <b>// Calcular el volumen y el área</b>
+                    function solicitarValores() {
                     <br>
-                    let volumen = Math.PI * Math.pow(radio, 2) * altura;
+                    rl.question('Ingrese el primer valor: ', (inputA) => {
                     <br>
-                    let area = 2 * Math.PI * radio * (radio + altura);
+                    A = parseInt(inputA);
+                    <br>
+                    rl.question('Ingrese el segundo valor: ', (inputB) => {
+                    <br>
+                    B = parseInt(inputB);
                     <br>
                     <br>
-                    <b>// Mostrar los resultados en los elementos de salida</b>
+                    if (A === B) {
                     <br>
-                    document.getElementById("resultadoArea").textContent = area.toFixed(2);
+                    console.log('Los valores deben ser distintos. Vuelva a ingresarlos.\n');
                     <br>
-                    document.getElementById("resultadoVolumen").textContent = volumen.toFixed(2);
+                    solicitarValores();
+                    <br>
+                    } else {
+                    <br>
+                    if (A > B) {
+                    <br>
+                    console.log(A + ' es el mayor.');
+                    <br>
+                    } else {
+                    <br>
+                    console.log(B + ' es el mayor.');
                     <br>
                     }
-                </p>
-                <p>
-                    // 1. Inicio
-                    <br>
-                    // 2. Declaración de variables R=0, H=0
-                    <br>
-                    let R = 0;
-                    <br>
-                    let H = 0;
-                </p>
-                <p>
-                    // 3. Leer el valor de Radio (R) y Altura (H)
-                    <br>
-                    rl.question("Ingrese el valor del radio (R): ", (answerR) => {
-                    <br>
-                    R = parseFloat(answerR);
-                    <br>
-                    rl.question("Ingrese el valor de la altura (H): ", (answerH) => {
-                    <br>
-                    H = parseFloat(answerH);
-                    <br>
-                    <br>
-                    // 4. Calcular el Volumen aplicando la fórmula
-                    <br>
-                    const volumen = Math.PI * Math.pow(R, 2) * H;
-                    <br>
-                    <br>
-
-                    // 5. Calcular el valor del área aplicando la fórmula respectiva
-                    <br>
-                    const area = 2 * Math.PI * R * (R + H);
-                    <br>
-                    <br>
-
-                    // 6. Escribir el valor del área y del volumen en la consola
-                    <br>
-                    console.log("El área del cilindro es: " + area.toFixed(2));
-                    <br>
-                    console.log("El volumen del cilindro es: " + volumen.toFixed(2));
-                    <br>
-                    <br>
-
-                    // 7. Fin
                     <br>
                     rl.close();
                     <br>
+                    }
+                    <br>
                     });
                     <br>
                     });
+                    <br>
+                    }
                 </p>
             </div>
 

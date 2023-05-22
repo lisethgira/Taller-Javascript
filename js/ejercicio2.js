@@ -5,7 +5,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
 let A = 0;
 let B = 0;
 
@@ -31,26 +30,26 @@ function solicitarValores() {
 }
 
 function compararValores() {
-    const valorA = parseInt(document.getElementById('valorA').value);
-    const valorB = parseInt(document.getElementById('valorB').value);
-  
-    if (isNaN(valorA) || isNaN(valorB)) {
-      document.getElementById('resultado').textContent = 'Ingrese valores numéricos válidos.';
+  const valorA = parseInt(document.getElementById('valorA').value);
+  const valorB = parseInt(document.getElementById('valorB').value);
+
+  if (isNaN(valorA) || isNaN(valorB)) {
+    document.getElementById('resultado').textContent = 'Ingrese valores numéricos válidos.';
+  } else {
+    if (valorA === valorB) {
+      document.getElementById('resultado').textContent = 'Los valores deben ser distintos. Ingreselos nuevamente.';
+      document.getElementById('valorA').value = '';
+      document.getElementById('valorB').value = '';
+    } else if (valorA > valorB) {
+      document.getElementById('resultado').textContent = valorA + ' es el mayor.';
     } else {
-      if (valorA === valorB) {
-        document.getElementById('resultado').textContent = 'Los valores deben ser distintos.';
-        document.getElementById('valorA').value = '';
-        document.getElementById('valorB').value = '';
-      } else if (valorA > valorB) {
-        document.getElementById('resultado').textContent = valorA + ' es el mayor.';
-      } else {
-        document.getElementById('resultado').textContent = valorB + ' es el mayor.';
-      }
+      document.getElementById('resultado').textContent = valorB + ' es el mayor.';
     }
   }
+}
 
-  solicitarValores();
-  compararValores();
+solicitarValores();
+
 
 
 
